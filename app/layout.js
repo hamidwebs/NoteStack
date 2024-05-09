@@ -1,7 +1,7 @@
-import { Inter } from "next/font/google";
+import 'bootstrap/dist/css/bootstrap.css';
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Navbar from "./Components/Navbar";
+import Script from 'next/script';
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +11,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className='remove-typing-cursor'>
+        <Navbar />
+        {children}
+        <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></Script>
+      </body>
     </html>
   );
 }
